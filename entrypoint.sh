@@ -7,7 +7,7 @@ cd /home/container
 java -version
 
 # Replace Startup Variables
-MODIFIED_STARTUP=`eval echo $(echo ${STARTUP_CMD} | sed -e 's/{{/${/g' -e 's/}}/}/g')`
+MODIFIED_STARTUP=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')`
 echo ":/home/container$ ${MODIFIED_STARTUP}"
 
 # Run the Server
