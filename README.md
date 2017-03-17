@@ -1,2 +1,2 @@
-# Containers
-Generic docker containers designed to work with Pterodactyl Panel and its daemon.
+# Containers: Java
+Generic java container built on top of Alpine Linux to support games such as Minecraft and Bungeecord.
