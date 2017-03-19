@@ -1,9 +1,9 @@
 # ----------------------------------
 # Pterodactyl Core Dockerfile
-# Environment: Java
+# Environment: Java (glibc support)
 # Minimum Panel Version: 0.6.0
 # ----------------------------------
-FROM java:openjdk-8-jre-alpine
+FROM frolvlad/alpine-oraclejdk8:cleaned
 
 MAINTAINER Pterodactyl Software, <support@pterodactyl.io>
 
