@@ -3,7 +3,7 @@
 # Environment: Java
 # Minimum Panel Version: 0.6.0
 # ----------------------------------
-FROM java:openjdk-8-jre-alpine
+FROM openjdk:8-jdk-alpine
 
 MAINTAINER Pterodactyl Software, <support@pterodactyl.io>
 
