@@ -7,6 +7,8 @@ RUN apt update && \
     apt install -y lib32gcc1 lib32stdc++6 curl && \
     curl -sL https://deb.nodesource.com/setup_6.x | bash - && \
     apt install -y nodejs && \
+    mkdir /node_modules && \
+    npm install --prefix / ws && \
     useradd -d /home/container -m container
 
 USER container
@@ -17,6 +19,5 @@ WORKDIR /home/container
 
 COPY ./entrypoint.sh /entrypoint.sh
 COPY ./wrapper.js /wrapper.js
-COPY ./node_modules/ /node_modules/
 
 CMD ["/bin/bash", "/entrypoint.sh"]
