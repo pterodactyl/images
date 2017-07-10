@@ -10,5 +10,12 @@ cd /home/container
 MODIFIED_STARTUP=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')`
 echo ":/home/container$ ${MODIFIED_STARTUP}"
 
+if [ -f OXIDE_FLAG ]; then
+    echo "Updating OxideMod..."
+    curl "https://dl.bintray.com/oxidemod/builds/Oxide-Rust.zip" > oxide.zip
+    unzip oxide.zip
+    rm oxide.zip
+fi
+
 # Run the Server
 node /wrapper.js "${MODIFIED_STARTUP}"
