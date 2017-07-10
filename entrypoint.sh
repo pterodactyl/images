@@ -12,9 +12,10 @@ echo ":/home/container$ ${MODIFIED_STARTUP}"
 
 if [ -f OXIDE_FLAG ]; then
     echo "Updating OxideMod..."
-    curl "https://dl.bintray.com/oxidemod/builds/Oxide-Rust.zip" > oxide.zip
-    unzip oxide.zip
+    curl -sSL "https://dl.bintray.com/oxidemod/builds/Oxide-Rust.zip" > oxide.zip
+    unzip -o -q oxide.zip
     rm oxide.zip
+    echo "Done updating OxideMod!"
 fi
 
 # Fix for Rust not starting
