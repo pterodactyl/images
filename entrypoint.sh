@@ -17,5 +17,8 @@ if [ -f OXIDE_FLAG ]; then
     rm oxide.zip
 fi
 
+# Fix for Rust not starting
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$(pwd)
+
 # Run the Server
 node /wrapper.js "${MODIFIED_STARTUP}"
