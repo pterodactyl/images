@@ -13,8 +13,7 @@ RUN apk update \
     && adduser -D -h /home/container container
 
 USER container
-ENV  USER container
-ENV  HOME /home/container
+ENV  USER=container HOME=/home/container
 
 WORKDIR /home/container
 
