@@ -13,7 +13,7 @@ export INTERNAL_IP=`ip route get 1 | awk '{print $NF;exit}'`
 MODIFIED_STARTUP=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')`
 echo ":/home/container$ ${MODIFIED_STARTUP}"
 
-if [ -f OXIDE_FLAG ]; then
+if [ -f OXIDE_FLAG ] || [ "${OXIDE}" = 1 ]; then
     echo "Updating OxideMod..."
     curl -sSL "https://github.com/OxideMod/Oxide/releases/download/latest/Oxide-Rust.zip" > oxide.zip
     unzip -o -q oxide.zip
