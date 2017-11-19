@@ -7,7 +7,7 @@ cd /home/container
 export INTERNAL_IP=`ip route get 1 | awk '{print $NF;exit}'`
 
 # Update Source Server
-if [ -z ${SRCDS_APPID} ]; then
+if [ ! -z ${SRCDS_APPID} ]; then
     ./steamcmd/steamcmd.sh +login anonymous +force_install_dir /home/container +app_update ${SRCDS_APPID} +quit
 fi
 
