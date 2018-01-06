@@ -3,15 +3,12 @@
 # Environment: Mono
 # Minimum Panel Version: 0.6.0
 # ----------------------------------
-FROM        alpine:edge
+FROM        frolvlad/alpine-mono
 
 MAINTAINER  Pterodactyl Software, <support@pterodactyl.io>
 
 RUN         apk update \
-            && apk upgrade \
-            && echo "http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
-            && apk update \
-            && apk add --no-cache mono openssl curl \
+            && apk add --no-cache openssl curl \
             && adduser -D -h /home/container container
 
 USER        container
