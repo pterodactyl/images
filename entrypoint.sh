@@ -1,6 +1,4 @@
 #!/bin/bash
-sleep 2
-
 cd /home/container
 
 # Output Current Java Version
