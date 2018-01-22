@@ -7,7 +7,7 @@ Our goal here is to maintain images that can run a wide variety of games in indi
 The `entrypoint.sh` files **should not do any application installing**, and exist solely to parse startup commands passed to the container, and then run them, with a pause at the beginning to allow the Daemon time to boot and attach to the container.
 
 ## Current Containers
-Every branch, except master, is a different container. For a current list of containers, check the branch list [here](https://github.com/Pterodactyl/Containers/branches)
+Every branch, except master, is a different container. For a current list of containers, check the branch list [here](https://github.com/Pterodactyl/Containers/branches/active)
 
 ## Contributing
 We welcome any contributions you might have. Please follow our formatting for Dockerfiles, which involves minimizing the number of layers, as well as the size of the container. If possible, please stick to Alpine Linux based images, however we do make use of `ubuntu:16.04` in the [`source` branch](https://github.com/Pterodactyl/Containers/tree/source) due to Source Engine limitations, and reducing the conflicts that might arise.
