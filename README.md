@@ -2,14 +2,12 @@
 
 This repository contains generic [Docker](https://docker.com) images that are used by Pterodactyl Panel to run games. With the release of `v0.6.0` of our panel, we have moved to making the install process be a completely seperate part of the process, making it much easier to maintain a smaller set of Dockerfiles.
 
-Our goal here is to maintain images that can run a wide variety of games in individual branches. For example, the [`java` branch](https://github.com/Pterodactyl/Containers/tree/java) is a standardized Docker container running on Alpine Linix that should support most all Minecraft based games, as well as java based games. We install all of the required dependencies that we ae aware of, but if you notice one missing, we welcome you to either raise an issue in here, or submit a PR to add it.
+Our goal here is to maintain images that can run a wide variety of games in individual branches. For example, the [`java` branch](https://github.com/Pterodactyl/Containers/tree/java) is a standardized Docker container running on Alpine Linux that should support most all Minecraft based games, as well as java based games. We install all of the required dependencies that we ae aware of, but if you notice one missing, we welcome you to either raise an issue in here, or submit a PR to add it.
 
 The `entrypoint.sh` files **should not do any application installing**, and exist solely to parse startup commands passed to the container, and then run them, with a pause at the beginning to allow the Daemon time to boot and attach to the container.
 
 ## Current Containers
-[`java`](https://github.com/Pterodactyl/Containers/tree/java)
-
-[`source`](https://github.com/Pterodactyl/Containers/tree/source)
+Every branch, except master, is a different container. For a current list of containers, check the branch list [here](https://github.com/Pterodactyl/Containers/branches)
 
 ## Contributing
 We welcome any contributions you might have. Please follow our formatting for Dockerfiles, which involves minimizing the number of layers, as well as the size of the container. If possible, please stick to Alpine Linux based images, however we do make use of `ubuntu:16.04` in the [`source` branch](https://github.com/Pterodactyl/Containers/tree/source) due to Source Engine limitations, and reducing the conflicts that might arise.
@@ -18,7 +16,7 @@ We welcome any contributions you might have. Please follow our formatting for Do
 ```
 MIT License
 
-Copyright (c) 2017 Pterodactyl Software
+Copyright (c) 2017-2018 Pterodactyl Software
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
