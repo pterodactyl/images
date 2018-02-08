@@ -10,6 +10,7 @@ MAINTAINER  Pterodactyl Software, <support@pterodactyl.io>
 RUN         apk update \
             && apk upgrade \
             && apk add --no-cache curl ca-certificates openssl \
+            && apk add libc++ --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
             && adduser -D -h /home/container container
 
 USER        container
