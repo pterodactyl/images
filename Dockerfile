@@ -7,9 +7,7 @@ FROM openjdk:8-jdk-alpine
 
 MAINTAINER Pterodactyl Software, <support@pterodactyl.io>
 
-RUN apk update \
-    && apk upgrade \
-    && apk add --no-cache --update curl ca-certificates openssl git tar bash sqlite \
+RUN apk add --no-cache --update curl ca-certificates openssl git tar bash sqlite \
     && adduser -D -h /home/container container
 
 USER container
