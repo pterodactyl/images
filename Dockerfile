@@ -7,8 +7,7 @@ FROM        frolvlad/alpine-mono
 
 MAINTAINER  Pterodactyl Software, <support@pterodactyl.io>
 
-RUN         apk update \
-            && apk add --no-cache openssl curl sqlite \
+RUN         apk add --no-cache openssl curl sqlite \
             && adduser -D -h /home/container container
 
 USER        container
