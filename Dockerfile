@@ -7,7 +7,7 @@ FROM python:3.6-alpine3.7
 
 MAINTAINER Michael Parker, <docker@parkervcp.com>
 
-RUN apk add --no-cache --update curl ca-certificates openssl git tar bash sqlite \
+RUN apk add --no-cache --update curl ca-certificates openssl git tar make gcc g++ libffi-dev \
     && adduser -D -h /home/container container
 
 USER container
