@@ -8,7 +8,7 @@ FROM        frolvlad/alpine-glibc
 MAINTAINER  Pterodactyl Software, <support@pterodactyl.io>
 
 RUN         apk add --update --no-cache curl ca-certificates openssl libstdc++ \
-            && apk add libc++ --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
+            && apk add libc++ jq --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
             && adduser -D -h /home/container container
 
 USER        container
