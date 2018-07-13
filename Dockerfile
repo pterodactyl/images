@@ -5,7 +5,8 @@
 # ----------------------------------
 FROM        ubuntu:18.04
 
-MAINTAINER  Pterodactyl Software, <support@pterodactyl.io>
+LABEL vendor="Pterodactyl Software" maintainer="support@pterodactyl.io"
+
 ENV         DEBIAN_FRONTEND noninteractive
 # Install Dependencies
 RUN         dpkg --add-architecture i386 \
