@@ -5,7 +5,7 @@
 # ----------------------------------
 FROM        python:3.6-alpine3.7
 
-LABEL       auhtor="Michael Parker" maintainer="docker@parkervcp.com"
+LABEL       author="Michael Parker" maintainer="docker@parkervcp.com"
 
 RUN         apk add --no-cache --update \
             && adduser -D -h /home/container container
