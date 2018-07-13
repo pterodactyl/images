@@ -5,7 +5,7 @@
 # ----------------------------------
 FROM        frolvlad/alpine-mono
 
-MAINTAINER  Pterodactyl Software, <support@pterodactyl.io>
+LABEL       author="Pterodactyl Software" maintainer="support@pterodactyl.io"
 
 RUN         apk add --update --no-cache openssl curl sqlite \
             && adduser -D -h /home/container container
