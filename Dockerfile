@@ -5,7 +5,7 @@
 # ----------------------------------
 FROM        frolvlad/alpine-glibc
 
-MAINTAINER  Pterodactyl Software, <support@pterodactyl.io>
+LABEL       author="Pterodactyl Software" maintainer="support@pterodactyl.io"
 
 RUN         apk add --update --no-cache curl ca-certificates openssl libstdc++ busybox-extras \
             && apk add libc++ jq --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
@@ -15,5 +15,5 @@ USER        container
 ENV         USER=container HOME=/home/container
 WORKDIR     /home/container
 
-COPY ./entrypoint.sh /entrypoint.sh
-CMD ["/bin/ash", "/entrypoint.sh"]
+COPY        ./entrypoint.sh /entrypoint.sh
+CMD         ["/bin/ash", "/entrypoint.sh"]
