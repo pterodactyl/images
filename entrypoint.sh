@@ -12,7 +12,7 @@ MODIFIED_STARTUP=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g'
 echo ":/home/container$ ${MODIFIED_STARTUP}"
 
 # OxideMod has been replaced with uMod
-if [ -f OXIDE_FLAG ] || [ "${OXIDE}" = 1 ] || [ "${UMOD}" == 1 ]; then
+if [ -f OXIDE_FLAG ] || [ "${OXIDE}" = 1 ] || [ "${UMOD}" = 1 ]; then
     echo "Updating uMod..."
     curl -sSL "https://umod.org/games/rust/download" > umod.zip
     unzip -o -q umod.zip
