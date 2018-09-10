@@ -11,12 +11,13 @@ export INTERNAL_IP=`ip route get 1 | awk '{print $NF;exit}'`
 MODIFIED_STARTUP=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')`
 echo ":/home/container$ ${MODIFIED_STARTUP}"
 
-if [ -f OXIDE_FLAG ] || [ "${OXIDE}" = 1 ]; then
-    echo "Updating uMod..."
-    curl -sSL "https://umod.org/games/rust/download" > oxide.zip
-    unzip -o -q oxide.zip
-    rm oxide.zip
-    echo "Done updating uMod!"
+# OxideMod has been replaced with uMod
+if [ -f OXIDE_FLAG ] || [ "${OXIDE}" = 1 ] || [ "${UMOD}" == 1 ]; then
+    echo "Updating OxideMod..."
+    curl -sSL "https://github.com/OxideMod/Oxide/releases/download/latest/Oxide-Rust.zip" > umod.zip
+    unzip -o -q umod.zip
+    rm umod.zip
+    echo "Done updating OxideMod!"
 fi
 
 # Fix for Rust not starting
