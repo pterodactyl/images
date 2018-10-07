@@ -3,7 +3,7 @@
 # Environment: Java (glibc support)
 # Minimum Panel Version: 0.6.0
 # ----------------------------------
-FROM        python:3.6-alpine3.7
+FROM        python:3-alpine
 
 LABEL       author="Michael Parker" maintainer="docker@parkervcp.com"
 
