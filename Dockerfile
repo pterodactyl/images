@@ -3,15 +3,16 @@
 # Environment: glibc
 # Minimum Panel Version: 0.6.0
 # ----------------------------------
-FROM        node:8.9-alpine
+FROM        node:8-alpine
 
-MAINTAINER  Pterodactyl Software, <support@pterodactyl.io>
+LABEL       author="Michael Parker" maintainer="parker@pterodactyl.io"
 
-RUN         adduser -D -h /home/container container
+RUN         apk add --no-cache --update libc6-compat \
+            && adduser -D -h /home/container container
 
 USER        container
 ENV         USER=container HOME=/home/container
 WORKDIR     /home/container
 
-COPY ./entrypoint.sh /entrypoint.sh
-CMD ["/bin/ash", "/entrypoint.sh"]
+COPY        ./entrypoint.sh /entrypoint.sh
+CMD         ["/bin/ash", "/entrypoint.sh"]
