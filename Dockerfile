@@ -5,9 +5,10 @@
 # ----------------------------------
 FROM        frolvlad/alpine-mono
 
-MAINTAINER  Pterodactyl Software, <support@pterodactyl.io>
+LABEL       author="Pterodactyl Software" maintainer="support@pterodactyl.io"
 
-RUN         apk add --update --no-cache openssl curl sqlite \
+RUN         echo "http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
+            && apk add --update --no-cache openssl curl sqlite libgdiplus \
             && adduser -D -h /home/container container
 
 USER        container
