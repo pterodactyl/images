@@ -3,13 +3,13 @@
 # Environment: Java
 # Minimum Panel Version: 0.6.0
 # ----------------------------------
-FROM        openjdk:8-jdk-alpine
+FROM        openjdk:8-jre-slim
 
-LABEL       author="Pterodactyl Software" maintainer="support@pterodactyl.io"
+LABEL       author="Michael Parker" maintainer="parker@pterodactyl.io"
 
-RUN         apk add --update --no-cache curl ca-certificates openssl git tar bash sqlite fontconfig tzdata \
-            && adduser -D -h /home/container container \
-            && ln -s /etc/localtime /etc/timezone
+RUN apt-get update \
+ && apt-get install curl ca-certificates openssl git tar sqlite fontconfig tzdata \
+ && useradd -d /home/container -m container
 
 USER        container
 ENV         USER=container HOME=/home/container
