@@ -7,7 +7,7 @@ FROM        node:8-alpine
 
 LABEL       author="Michael Parker" maintainer="parker@pterodactyl.io"
 
-RUN         apk add --no-cache --update libc6-compat \
+RUN         apk add --no-cache --update libc6-compat ffmpeg \
             && adduser -D -h /home/container container
 
 USER        container
