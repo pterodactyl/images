@@ -57,7 +57,9 @@ var poll = function( ) {
                 if (json.Message !== undefined && json.Message.length > 0) {
                     console.log(json.Message);
                     const fs = require("fs");
-                    fs.appendFile("latest.log", "\n" + json.Message);
+                    fs.appendFile("latest.log", "\n" + json.Message, (err) => {
+                        if (err) console.log("Callback error in appendFile:"+err);
+                    });
                 }
             } else {
                 console.log("Error: Invalid JSON received");
