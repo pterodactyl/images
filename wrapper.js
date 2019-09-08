@@ -2,7 +2,9 @@
 
 var startupCmd = "";
 const fs = require("fs");
-fs.writeFile("latest.log", "");
+fs.writeFile("latest.log", "\n" + json.Message, (err) => {
+    if (err) console.log("Callback error in appendFile:"+err);
+});
 
 var args = process.argv.splice(process.execArgv.length + 2);
 for (var i = 0; i < args.length; i++) {
