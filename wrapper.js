@@ -2,7 +2,9 @@
 
 var startupCmd = "";
 const fs = require("fs");
-fs.writeFile("latest.log", "");
+fs.writeFile("latest.log", "", (err) => {
+    if (err) console.log("Callback error in appendFile:"+err);
+});
 
 var args = process.argv.splice(process.execArgv.length + 2);
 for (var i = 0; i < args.length; i++) {
@@ -57,7 +59,9 @@ var poll = function( ) {
                 if (json.Message !== undefined && json.Message.length > 0) {
                     console.log(json.Message);
                     const fs = require("fs");
-                    fs.appendFile("latest.log", "\n" + json.Message);
+                    fs.appendFile("latest.log", "\n" + json.Message, (err) => {
+                        if (err) console.log("Callback error in appendFile:"+err);
+                    });
                 }
             } else {
                 console.log("Error: Invalid JSON received");
