@@ -1,6 +1,8 @@
 #!/bin/bash
 cd /home/container
 
+echo "Running on Debian $(cat /etc/debian_version)"
+
 # Output Current Java Version
 java -version
 
