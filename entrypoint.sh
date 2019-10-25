@@ -1,9 +1,9 @@
 #!/bin/bash
 cd /home/container
 
+# Print information
 echo "Running on Debian $(cat /etc/debian_version)"
-
-# Output Current Java Version
+echo "Current timezone is: $(cat /etc/timezone)"
 java -version
 
 # Make internal Docker IP address available to processes.
