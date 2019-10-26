@@ -14,7 +14,7 @@ RUN	apt update && apt upgrade -y \
 	&& echo "deb http://repos.azulsystems.com/debian stable main" >> /etc/apt/sources.list.d/zulu.list \
 	&& mkdir -p /usr/share/man/man1 \
 	&& apt update \
-	&& apt install -y --no-install-recommends tzdata zre-8 \
+	&& apt install -y curl ca-certificates openssl git tar sqlite fontconfig iproute2 tzdata zre-8 \
 	&& useradd -d /home/container -m container
  
 USER	container
