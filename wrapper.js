@@ -47,6 +47,7 @@ var poll = function( ) {
         process.stdin.resume();
         process.stdin.setEncoding("utf8");
         var util = require("util");
+        ws.send(createPacket('Pinging RCON...'));
         process.stdin.on('data', function (text) {
             ws.send(createPacket(text));
         });
@@ -75,7 +76,6 @@ var poll = function( ) {
 
     ws.on("error", function(err) {
         waiting = true;
-        ws.send(createPacket('Pinging RCON...'));
         console.log("Waiting for RCON to come up... This might take a couple of minutes...");
         setTimeout(poll, 5000);
     });
