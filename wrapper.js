@@ -75,7 +75,8 @@ var poll = function( ) {
 
     ws.on("error", function(err) {
         waiting = true;
-        console.log("Waiting for RCON to come up...");
+        ws.send(createPacket('Pinging RCON...'));
+        console.log("Waiting for RCON to come up... This might take a couple of minutes...");
         setTimeout(poll, 5000);
     });
 
