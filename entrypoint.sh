@@ -4,6 +4,11 @@ cd /home/container
 # Make internal Docker IP address available to processes.
 export INTERNAL_IP=`ip route get 1 | awk '{print $NF;exit}'`
 
+# Delete Steam Cache Files
+rm -rf ./steam/appcache
+rm -rf ./steam/depotcache
+rm -rf ./steamapps/appmanifest_258550.acf
+
 # Update Rust Server
 ./steam/steamcmd.sh +login anonymous +force_install_dir /home/container +app_update 258550 +quit
 
