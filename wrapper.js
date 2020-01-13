@@ -22,7 +22,13 @@ if (startupCmd.length < 1) {
 
 var exec = require("child_process").exec;
 console.log("Starting Rust...");
-exec(startupCmd);
+
+const gameProcess = exec(startupCmd);
+gameProcess.stdout.on('data', console.log);
+gameProcess.stderr.on('data', console.log);
+gameProcess.on('exit', function (code, signal) {
+    process.exit(code);
+});
 
 var waiting = true;
 
