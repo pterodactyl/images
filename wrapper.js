@@ -43,8 +43,10 @@ gameProcess.stderr.on('data', filter);
 gameProcess.on('exit', function (code, signal) {
     exited = true;
 
-    console.log("Game process exited with code " + code + ".");
-    process.exit(code);
+    if (code) {
+        console.log("Main game process exited with code " + code);
+        // process.exit(code);
+    }
 });
 
 function initialListener(data) {
