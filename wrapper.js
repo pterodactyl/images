@@ -79,7 +79,7 @@ var poll = function( ) {
         return JSON.stringify(packet);
     }
 
-    var serverHostname = "localhost";
+    var serverHostname = process.env.RCON_IP ? process.env.RCON_IP : "localhost";
     var serverPort = process.env.RCON_PORT;
     var serverPassword = process.env.RCON_PASS;
     var WebSocket = require("ws");
