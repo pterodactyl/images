@@ -18,7 +18,7 @@ if [ ! -z ${SRCDS_APPID} ]; then
     
 	# Garrys Mod server uses external server content
 	if [! -z ${SRCDS_MOUNTED_CONTENT} ]; then
-		for game_content in ${MOUNTED_CONTENT}; do
+		for game_content in ${SRCDS_MOUNTED_CONTENT}; do
 			./steamcmd/steamcmd.sh +login anonymous +force_install_dir /home/container +app_update $game_content +quit
 		done
 	fi
