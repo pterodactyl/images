@@ -15,6 +15,13 @@ if [ ! -z ${SRCDS_APPID} ]; then
     else
         ./steamcmd/steamcmd.sh +login anonymous +force_install_dir /home/container +app_update ${SRCDS_APPID} +quit
     fi
+    
+	# Garrys Mod server uses external server content
+	if [! -z ${SRCDS_MOUNTED_CONTENT} ]; then
+		for game_content in ${MOUNTED_CONTENT}; do
+			./steamcmd/steamcmd.sh +login anonymous +force_install_dir /home/container +app_update $game_content +quit
+		done
+	fi
 fi
 
 # Replace Startup Variables
