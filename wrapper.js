@@ -15,6 +15,9 @@ for (var i = 0; i < args.length; i++) {
     }
 }
 
+var startupCmdArr = startupCmd.split(" ");
+var serverPort = (startupCmdArr.indexOf("+rcon.port") > -1) ? startupCmdArr[startupCmdArr.indexOf("+rcon.port") + 1] : 28016;
+
 if (startupCmd.length < 1) {
     console.log("Error: Please specify a startup command.");
     process.exit();
@@ -80,7 +83,7 @@ var poll = function( ) {
     }
 
     var serverHostname = process.env.RCON_IP ? process.env.RCON_IP : "localhost";
-    var serverPort = process.env.RCON_PORT;
+ // var serverPort = process.env.RCON_PORT;
     var serverPassword = process.env.RCON_PASS;
     var WebSocket = require("ws");
     var ws = new WebSocket("ws://" + serverHostname + ":" + serverPort + "/" + serverPassword);
