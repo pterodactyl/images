@@ -1,21 +1,10 @@
-# ----------------------------------
-# Pterodactyl Core Dockerfile
-# Environment: Java (glibc support)
-# Minimum Panel Version: 0.6.0
-# ----------------------------------
-FROM        openjdk:8-jre-slim
-
-LABEL       author="Michael Parker" maintainer="parker@pterodactyl.io"
-
-RUN apt-get update -y \
- && apt-get install -y curl ca-certificates openssl git tar sqlite fontconfig tzdata iproute2 \
- && useradd -d /home/container -m container
+FROM adoptopenjdk/openjdk8:alpine-jre
+ 
+RUN apk add --no-cache --update jq curl ca-certificates openssl git tar bash sqlite fontconfig tzdata iproute2 \
+    && adduser --disabled-password --home /home/container container
  
 USER container
 ENV  USER=container HOME=/home/container
-
-USER        container
-ENV         USER=container HOME=/home/container
 
 WORKDIR     /home/container
 
