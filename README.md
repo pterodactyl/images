@@ -1,1 +1,1 @@
-Docker image for neosvr beta headless client / server
+Docker image for NeosVR beta headless client / server
