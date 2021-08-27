@@ -86,7 +86,7 @@ var poll = function( ) {
     var ws = new WebSocket("ws://" + serverHostname + ":" + serverPort + "/" + serverPassword);
 
     ws.on("open", function open() {
-        console.log("Connected to RCON.");
+        console.log("Connected to RCON. Generating the map now.");
         waiting = false;
 
         // Hack to fix broken console output
